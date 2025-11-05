@@ -139,7 +139,8 @@ app.post(
 // --- SERVIR LE FRONTEND REACT ---
 app.use(express.static(path.join(__dirname, "build")));
 
-app.get("/*", (req, res) => {
+// Middleware pour toutes les autres routes (React Router)
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
