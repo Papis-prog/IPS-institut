@@ -98,10 +98,9 @@ export default function Inscription() {
       });
 
       // Envoyer au serveur
-      const res = await axios.post("http://localhost:5000/api/inscription", formData, {
+     const res = await axios.post("http://isp-thies.onrender.com/api/inscription", formData, {
         headers: { "Content-Type": "multipart/form-data" }
       });
-
       if (res.data.success) {
         alert("✅ Inscription envoyée avec succès !");
         setStep(1);
